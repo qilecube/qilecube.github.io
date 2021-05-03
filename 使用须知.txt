@@ -1,0 +1,5 @@
+默笙 admin  ui
+每个html里的
+<header></header>
+<footer></footer>
+标签里所有的内容均可作为公共模板分离
