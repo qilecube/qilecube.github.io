@@ -26,14 +26,5 @@ function myFunction() {
             }
         }
     }
-    
-    // 回车触发：
-    $(".search input").keypress(function(e){
-        var key = $.trim($(this).val());
-        if(e.keyCode === 13) {
-            //  搜索工作
-            that.search(key);
-        }
-    })
 
 }
