@@ -1,6 +1,7 @@
 function myFunction() {
+    'use strict';
     // 声明变量
-    var input, filter, table, tr, td, i;
+    var input, filter, table, tr, td, tdx, i;
     input = document.getElementById("myInput");
     filter = input.value.toUpperCase();
     table = document.getElementById("myTable");
