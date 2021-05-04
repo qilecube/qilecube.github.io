@@ -28,7 +28,7 @@ function myFunction() {
     }
     
     // 回车触发：
-    $(".searchaa").keypress(function(e){
+    $(".search input").keypress(function(e){
         var key = $.trim($(this).val());
         if(e.keyCode === 13) {
             //  搜索工作
