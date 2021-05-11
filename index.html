@@ -10,7 +10,7 @@
 
     <link rel="shortcut icon" href="./images/favicon.ico">
     <link rel="stylesheet" href="./css/style.css" type="text/css" />
-    <script src="js/javascript.js"></script>
+    <script src="./js/javascript.js"></script>
 
     <!--bootstrap-->
     <link rel="stylesheet" href="./css/bootstrap.css">
@@ -19,7 +19,7 @@
     <script src="./js/bootstrap.js"></script>
     <script src="./js/bootstrap.min.js"></script>
     <!-- end bootstrap-->
-
+    
 </head>
 
 <body>
@@ -55,7 +55,7 @@
             </div>
         </div>
     </nav>
-    <!-- Navigation Bar end- ->
+    <!-- Navigation Bar end-->
     
     <!-- mobile link -->
     <div class="col-md-6 visible-xs-block ">
@@ -69,19 +69,19 @@
     <div class="container">
         <div class="row">
             <div class="card-body">
+                <!--标题-->
+                <div class="col-md-3"><h1 class="header-title">奇乐魔友价查询</h1></div>
                 <!--提示-->
-                <div class="alert alert-info">
+                <div class="alert alert-info col-md-4">
                     <button type="button" class="close" data-dismiss="alert">&times;</button>
                     魔友价为批发底价，不支持和店内其他任何活动同时参与。拍下后不付款，联系客服改魔友价即可。
                 </div>
-                <!--标题-->
-                <h1 class="header-title">奇乐魔友价查询</h1>
                 <!--搜索-->
                 <input type="text" id="myInput" onkeyup="myFunction()" placeholder="正阶输入数字，可搜品牌或型号关键词，输入...">
-                       <button class="btn btn-block btn-lg btn-info" type="sumbit" onclick="myFunction()" value="">搜索</button>
+                <button class="btn btn-block btn-lg btn-info" type="sumbit" onclick="myFunction()" value="">搜索</button>
                 <br>
                 <!--表格-->
-                <table id="myTable">
+                                <table id="myTable">
                     <tr class="header">
 
                         <!-- list header -->
@@ -102,6 +102,7 @@
                                 <td> 奇艺魔方格/Qiyi </td>
                                 <td> - </td>
                             </tr>
+                            
                             <tr>
                                 <td> valk2M弱磁版<code>磁</code> </td>
                                 <td> 68 </td>
@@ -1393,7 +1394,7 @@
                                 <td> - </td>
                             </tr>
 
-<tr>
+                            <tr>
                                 <td> 魅龙五魔方<code>磁</code> </td>
                                 <td> 36 </td>
                                 <td> 魔域文化/MOYU </td>
@@ -2325,5 +2326,4 @@
     <!-- 魔友价 END -->
 
 </body>
-
 </html>
