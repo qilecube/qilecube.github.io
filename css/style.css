@@ -30,3 +30,25 @@
     /* 表头及鼠标移动过 tr 时添加背景 */
     background-color: #f1f1f1;
 }
+
+form{
+    float: left;
+    height: 0px;
+    /* display: none; */
+    overflow: hidden;
+}
+
+input:checked~form{
+    /* display: block; */
+    overflow: visible;
+}
+
+input
+{
+    width: 25%;
+}
+
+output
+{
+    width: 15%;
+}

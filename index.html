@@ -47,7 +47,7 @@
                         <li class=""><a href="https://qilemofang.taobao.com/" target="_blank"><span class="glyphicon glyphicon-shopping-cart"></span>淘宝</a></li>
                         <li class="divider-vertical">符</li>
                         <li class=""><a href="https://mobile.yangkeduo.com/mall_page.html?mall_id=470028412" target="_blank"><span class="glyphicon glyphicon-shopping-cart"></span>拼多多</a></li>
-                        <li class="divider-vertical">啊</li>
+                        <li class="divider-vertical">啊</li>                    
                     </ul>
                 </div>
                 <!-- end menu -->
@@ -76,6 +76,23 @@
                     <button type="button" class="close" data-dismiss="alert">&times;</button>
                     魔友价为批发底价，不支持和店内其他任何活动同时参与。拍下后不付款，联系客服改魔友价即可。
                 </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="form-group col-md-3">
+                            <input type="checkbox" style="width: 28px; height: 28px;position: absolute; clip: rect(1px 22px 15px 3px)" id="dianji">
+                            <label for="dianji">
+                            </label>
+                            <form oninput="x.value=parseInt(a.value)-parseInt(b.value)">
+                                <br class="form-group">
+                                <input  type="number" id="a" value="" placeholder="一口价">
+                                <input  type="number" id="b" value="" placeholder="魔友价">
+                                <output style="font: bold;font-size: 22px;color: crimson;" name="x" for="a b"></output>
+                                </div>
+                            </form> 
+                        </div>
+                    </div>
+                 </div>
+                
                 <!--搜索-->
                 <input type="text" id="myInput" onkeyup="myFunction()" placeholder="输入品牌或型号查询，正阶输入数字如‘3阶’，输入...">
                 <button class="btn btn-block btn-lg btn-info" type="sumbit" onclick="myFunction()" value="">搜索</button>
