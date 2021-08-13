@@ -100,10 +100,10 @@
                                 id="dianji">
                             <label for="dianji">
                             </label>
-                            <form oninput="x.value=parseInt(a.value)-parseInt(b.value)">
+                            <form oninput="x.value=parseFloat(a.value)-parseFloat(b.value)">
                                 <br class="form-group">
-                                <input type="number" id="a" value="" placeholder="一口价">
-                                <input type="number" id="b" value="" placeholder="魔友价">
+                                <input type="number" min="0.01" id="a" value="" placeholder="一口价">
+                                <input type="number" min="0.01" id="b" value="" placeholder="魔友价">
                                 <output style="font: bold;font-size: 22px;color: crimson;" name="x" for="a b"></output>
                         </div>
                         </form>
