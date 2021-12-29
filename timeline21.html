@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>奇乐魔方魔友价</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta content="专注魔方，只为更好" />
+
+
+    <link rel="shortcut icon" href="./images/favicon.ico">
+    <link rel="stylesheet" href="./css/style.css" type="text/css" />
+    <script src="./js/javascript.js"></script>
+
+    <!--bootstrap-->
+    <link rel="stylesheet" href="./css/bootstrap2.css">
+    <link rel="stylesheet" href="./css/bootstrap-theme.css">
+    <link href="css/app.min.css" rel="stylesheet" type="text/css" />
+    <script src="./jquery.js"></script>
+    <script src="./js/bootstrap.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <!-- end bootstrap-->
+
+    <style>
+        body {
+            margin: 0 auto;
+            color: #eee9dc;
+            background: #5a5a5a;
+            text-align: left;
+        }
+
+        #divcss5 {
+            margin: 0 auto;
+            border: 1px solid #000;
+        }
+
+        /* -------------------------------------
+ * timeline
+ * ------------------------------------- */
+        #timeline {
+            list-style: none;
+            margin: 10px 0 10px 10px;
+            padding-left: 35px;
+            border-left: 8px solid #eee9dc;
+        }
+
+        #timeline li {
+            margin: 40px 0;
+            position: relative;
+        }
+
+        #timeline p {
+            margin: 0 0 15px;
+        }
+
+        .date {
+            margin-top: -10px;
+            top: 50%;
+            left: -158px;
+            font-size: 0.95em;
+            line-height: 20px;
+            position: absolute;
+        }
+
+        .circle {
+            margin-top: -10px;
+            top: 50%;
+            left: -44px;
+            width: 10px;
+            height: 10px;
+            background: #5a5a5a;
+            border: 5px solid #eee9dc;
+            border-radius: 50%;
+            display: block;
+            position: absolute;
+        }
+
+        .content {
+            max-height: 20px;
+            padding: 50px 20px 0;
+            border-color: transparent;
+            border-width: 2px;
+            border-style: solid;
+            border-radius: 0.5em;
+            position: relative;
+        }
+
+        .content:before,
+        .content:after {
+            content: 1px;
+            width: 0;
+            height: 0;
+            border: solid transparent;
+            position: absolute;
+            pointer-events: none;
+            right: 100%;
+        }
+
+        .content:before {
+            border-right-color: inherit;
+            border-width: 20px;
+            top: 50%;
+            margin-top: -20px;
+        }
+
+        .content:after {
+            border-right-color: #5a5a5a;
+            border-width: 17px;
+            top: 50%;
+            margin-top: -17px;
+        }
+
+        .content p {
+            max-height: 0;
+            color: transparent;
+            text-align: justify;
+            word-break: break-word;
+            hyphens: auto;
+            overflow: hidden;
+        }
+
+
+        label {
+            font-size: 1.3em;
+            position: absolute;
+            z-index: 100;
+            cursor: pointer;
+            top: 20px;
+            transition: transform 0.2s linear;
+        }
+
+        .radio {
+            display: none;
+        }
+
+        .radio:checked+.relative label {
+            cursor: auto;
+            transform: translateX(42px);
+        }
+
+        .radio:checked+.relative .circle {
+            background: #ff4200;
+        }
+
+        .radio:checked~.content {
+            max-height: 180px;
+            border-color: #eee9dc;
+            margin-right: 20px;
+            transform: translateX(20px);
+            transition: max-height 0.4s linear, border-color 0.5s linear, transform 0.2s linear;
+        }
+
+        .radio:checked~.content p {
+            max-height: 200px;
+            color: #eee9dc;
+            transition: color 0.3s linear 0.3s;
+        }
+
+        img {
+            height: 110px;
+        }
+
+        /* -------------------------------------
+ * mobile phones (vertical version only)
+ * ------------------------------------- */
+        @media screen and (max-width: 767px) {
+            #timeline {
+                margin-left: 0;
+                padding-left: 0;
+                border-left: none;
+            }
+
+            #timeline li {
+                margin: 50px 0;
+            }
+
+            label {
+                width: 85%;
+                font-size: 1.1em;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                overflow: hidden;
+                display: block;
+                transform: translateX(18px);
+            }
+
+            .content {
+                padding-top: 45px;
+                border-color: #eee9dc;
+            }
+
+            .content:before,
+            .content:after {
+                border: solid transparent;
+                bottom: 100%;
+            }
+
+            .content:before {
+                border-bottom-color: inherit;
+                border-width: 17px;
+                top: -16px;
+                left: 50px;
+                margin-left: -17px;
+            }
+
+            .content:after {
+                border-bottom-color: #5a5a5a;
+                border-width: 20px;
+                top: -20px;
+                left: 50px;
+                margin-left: -20px;
+            }
+
+            .content p {
+                font-size: 0.9em;
+                line-height: 1.4;
+            }
+
+            .circle {
+                margin-top: -10px;
+                top: 50%;
+                left: -44px;
+                width: 10px;
+                height: 10px;
+                background: #5a5a5a;
+                border: 5px solid #eee9dc;
+                border-radius: 50%;
+                display: block;
+                position: absolute;
+            }
+
+            .date {
+                display: none;
+            }
+
+
+            img {
+                height: 110px;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- Navigation Bar-->
+    <nav class="navbar navbar-inverse">
+        <div class="container">
+            <div class="row">
+
+                <!--header-->
+                <div class="navbar-header">
+                    <img class="navbar-brand" src="./images/logo.png">
+                </div>
+                <!--end header-->
+
+                <!-- menu -->
+                <div id="navbar" class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="divider-vertical">　</li>
+                        <li class="divider-vertical">　</li>
+                        <li class=""><a href="https://qilecube.com"><span class="glyphicon glyphicon-th"></span>魔友价</a>
+                        </li>
+                        <li class="divider-vertical">　</li>
+                        <li class=""><a href="https://jq.qq.com/?_wv=1027&k=8o60qrtO" target="_blank"><span
+                                    class="glyphicon glyphicon-user"></span>加入Q群189420325</a></li>
+                        <li class="divider-vertical">　</li>
+                        <li class=""><a href="https://qilemofang.taobao.com/" target="_blank"><span
+                                    class="glyphicon glyphicon-shopping-cart"></span>淘宝</a></li>
+                        <li class="divider-vertical">　</li>
+                        <li class=""><a href="https://mobile.yangkeduo.com/mall_page.html?mall_id=470028412"
+                                target="_blank"><span class="glyphicon glyphicon-shopping-cart"></span>拼多多</a></li>
+                        <li class="divider-vertical">　</li>
+                        <li class=""><a href="https://qilecube.com/timeline21.html" target="_blank"><span
+                                    class="glyphicon glyphicon-calendar"></span>2021新品时间轴</a>
+                        </li>
+                        <li class="divider-vertical">　</li>
+                    </ul>
+                </div>
+                <!-- end menu -->
+
+            </div>
+        </div>
+    </nav>
+    <!-- Navigation Bar end-->
+
+    <!-- 手机导航 电脑不显示 -->
+    <div class="col-md-6 visible-xs-block ">
+        <span class="label label-default" style="background-color: #eeeeee"><a href="https://qilecube.com"
+                target="_blank">魔友价</a></span>
+
+        <span class="label label-default" style="background-color: #eeeeee"><a href="https://qilemofang.taobao.com/"
+                target="_blank">淘宝店</a></span> <span class="label label-default" style="background-color: #eeeeee"><a
+                href="https://mobile.yangkeduo.com/mall_page.html?mall_id=470028412" target="_blank">拼多多</a></span>
+        <span class="label label-default" style="background-color: #eeeeee"><a
+                href="https://jq.qq.com/?_wv=1027&k=uXxzfMoY" target="_blank">加入魔友1群</a></span> <span
+            class="label label-default" style="background-color: #eeeeee"><a
+                href="https://jq.qq.com/?_wv=1027&k=V6BmZI7z" target="_blank">加入魔友2群</a></span> <span
+            class="label label-default" style="background-color: #eeeeee" target="_blank"><a
+                href="https://jq.qq.com/?_wv=1027&k=A5JcWzpB" target="_blank">加入魔友3群</a></span>
+
+    </div>
+    <!-- mobile link end -->
+
+    <!-- 时间轴 -->
+    <div class="container">
+        <div class="row">
+            <div class="card-body">
+                <!--标题-->
+                <div class="col-md-3">
+                    <h1 class="header-title">2021新品时间轴</h1>
+                </div>
+                <!--提示-->
+                <div class="alert alert-info col-md-4">
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                    有任何建议可联系qq770029591，邮箱770029591@qq.com.
+                </div>
+            </div>
+
+            <br>
+            <br>
+            <br>
+            <br>
+            <div class="alert  col-md-6">
+                <ul id='timeline'>
+                    <li class='work'>
+                        <input class='radio' id='work1' name='works' type='radio'>
+                        <div class=relative>
+                            <label for='work1'>MScubeMS3-v1</label>
+                            <span class='date'>1月</span>
+                            <span class='circle'></span>
+                        </div>
+                        <div class='content'>
+                            <p><img
+                                    src=https://img.alicdn.com/imgextra/i2/1992806406/O1CN01jpT2ni1xBzvbYmPiK_!!1992806406.png>
+                            </p>
+                        </div>
+                    </li>
+                    <li class='work'>
+                        <input class='radio' id='work2' name='works' type='radio'>
+                        <div class=relative>
+                            <label for='work2'>GAN356icarry</label>
+                            <span class='date'>2月</span>
+                            <span class='circle'></span>
+                        </div>
+                        <div class='content'>
+                            <p><img
+                                    src=https://img.alicdn.com/imgextra/i1/1992806406/O1CN01aOv7U51xBzrmYeLr3_!!1992806406.jpg>
+                            </p>
+                        </div>
+                    </li>
+                    <li class='work'>
+                        <input class='radio' id='work3' name='works' type='radio'>
+                        <div class=relative>
+                            <label for='work3'>GAN11Mduo</label>
+                            <span class='date'>4月</span>
+                            <span class='circle'></span>
+                        </div>
+                        <div class='content'>
+                            <p><img
+                                    src=https://img.alicdn.com/imgextra/i1/1992806406/O1CN01SCetAw1xBztEav5JN_!!1992806406.png>
+                            </p>
+                        </div>
+                    </li>
+                    <li class='work'>
+                        <input class='radio' id='work4' name='works' type='radio'>
+                        <div class=relative>
+                            <label for='work4'>大雁展翅PROM</label>
+                            <span class='date'>4月</span>
+                            <span class='circle'></span>
+                        </div>
+                        <div class='content'>
+                            <p><img
+                                    src=https://img.alicdn.com/imgextra/i2/1992806406/O1CN01KuI8nW1xBzsBiRE5T_!!1992806406.jpg>
+                            </p>
+                        </div>
+                    </li>
+                    <li class='work'>
+                        <input class='radio' id='work5' name='works' type='radio'>
+                        <div class=relative>
+                            <label for='work5'>奇艺魔方格XMD梦四阶</label>
+                            <span class='date'>4月</span>
+                            <span class='circle'></span>
+                        </div>
+                        <div class='content'>
+                            <p><img
+                                    src=https://img.alicdn.com/imgextra/i1/1992806406/O1CN01pO3AyU1xBzsBzz0On_!!1992806406.jpg>
+                            </p>
+                        </div>
+                    </li>
+                    <li class='work'>
+                        <input class='radio' id='work6' name='works' type='radio'>
+                        <div class=relative>
+                            <label for='work6'>永骏MGCSQ1</label>
+                            <span class='date'>4月</span>
+                            <span class='circle'></span>
+                        </div>
+                        <div class='content'>
+                            <p><img
+                                    src=https://img.alicdn.com/imgextra/i2/1992806406/O1CN014tQ5Tw1xBzsD3ScvI_!!1992806406.png>
+                            </p>
+                        </div>
+                    </li>
+                    <li class='work'>
+                        <input class='radio' id='work7' name='works' type='radio'>
+                        <div class=relative>
+                            <label for='work7'>GAN251M系列</label>
+                            <span class='date'>5月</span>
+                            <span class='circle'></span>
+                        </div>
+                        <div class='content'>
+                            <p><img
+                                    src=https://img.alicdn.com/imgextra/i3/1992806406/O1CN01Fk4ldv1xBzszAwrtn_!!1992806406.png>
+                            </p>
+                        </div>
+                    </li>
+                    <li class='work'>
+                        <input class='radio' id='work8' name='works' type='radio'>
+                        <div class=relative>
+                            <label for='work8'>奇艺魔方格XMD风三阶二代</label>
+                            <span class='date'>6月</span>
+                            <span class='circle'></span>
+                        </div>
+                        <div class='content'>
+                            <p><img
+                                    src=https://img.alicdn.com/imgextra/i2/1992806406/O1CN01JulCoL1xBzseNCoYg_!!1992806406.jpg>
+                            </p>
+                        </div>
+                    </li>
+                    <li class='work'>
+                        <input class='radio' id='work9' name='works' type='radio'>
+                        <div class=relative>
+                            <label for='work9'>魔域wrm2021磁力版</label>
+                            <span class='date'>6月</span>
+                            <span class='circle'></span>
+                        </div>
+                        <div class='content'>
+                            <p><img
+                                    src=https://img.alicdn.com/imgextra/i2/1992806406/O1CN011g0C7W1xBzsxX9yf9_!!1992806406.jpg>
+                            </p>
+                        </div>
+                    </li>
+                    <li class='work'>
+                        <input class='radio' id='work10' name='works' type='radio'>
+                        <div class=relative>
+                            <label for='work10'>奇艺魔方格一阶魔方</label>
+                            <span class='date'>6月</span>
+                            <span class='circle'></span>
+                        </div>
+                        <div class='content'>
+                            <p><img
+                                    src=https://img.alicdn.com/imgextra/i1/1992806406/O1CN01kxmprf1xBzt06S6tl_!!1992806406.jpg>
+                            </p>
+                        </div>
+                    </li>
+                    <li class='work'>
+                        <input class='radio' id='work11' name='works' type='radio'>
+                        <div class=relative>
+                            <label for='work11'>魔域威龙AI</label>
+                            <span class='date'>7月</span>
+                            <span class='circle'></span>
+                        </div>
+                        <div class='content'>
+                            <p><img
+                                    src=https://img.alicdn.com/imgextra/i3/1992806406/O1CN01gJtW301xBztMHt3hT_!!1992806406.jpg>
+                            </p>
+                        </div>
+                    </li>
+                    <li class='work'>
+                        <input class='radio' id='work12' name='works' type='radio'>
+                        <div class=relative>
+                            <label for='work12'>GAN11M系列</label>
+                            <span class='date'>8月</span>
+                            <span class='circle'></span>
+                        </div>
+                        <div class='content'>
+                            <p><img
+                                    src=https://img.alicdn.com/imgextra/i3/1992806406/O1CN01Ztnosp1xBztR9QzjX_!!1992806406.png>
+                            </p>
+                        </div>
+                    </li>
+                    <li class='work'>
+                        <input class='radio' id='work13' name='works' type='radio'>
+                        <div class=relative>
+                            <label for='work13'>GANMiniMpro</label>
+                            <span class='date'>8月</span>
+                            <span class='circle'></span>
+                        </div>
+                        <div class='content'>
+                            <p><img
+                                    src=https://img.alicdn.com/imgextra/i4/1992806406/O1CN01pdPAkm1xBztpJIJTM_!!1992806406.jpg>
+                            </p>
+                        </div>
+                    </li>
+                    <li class='work'>
+                        <input class='radio' id='work14' name='works' type='radio'>
+                        <div class=relative>
+                            <label for='work14'>大雁腾云2阶plusM</label>
+                            <span class='date'>8月</span>
+                            <span class='circle'></span>
+                        </div>
+                        <div class='content'>
+                            <p><img
+                                    src=https://img.alicdn.com/imgextra/i3/1992806406/O1CN01lFjl2N1xBztWNAr6S_!!1992806406.jpg>
+                            </p>
+                        </div>
+                    </li>
+                    <li class='work'>
+                        <input class='radio' id='work15' name='works' type='radio'>
+                        <div class=relative>
+                            <label for='work15'>GAN356i3</label>
+                            <span class='date'>8月</span>
+                            <span class='circle'></span>
+                        </div>
+                        <div class='content'>
+                            <p><img
+                                    src=https://img.alicdn.com/imgextra/i1/837538328/O1CN01YoCXig2BOH939Taxe_!!837538328.jpg>
+                            </p>
+                        </div>
+                    </li>
+                    <li class='work'>
+                        <input class='radio' id='work16' name='works' type='radio'>
+                        <div class=relative>
+                            <label for='work16'>魔域RS3M2020磁悬浮</label>
+                            <span class='date'>9月</span>
+                            <span class='circle'></span>
+                        </div>
+                        <div class='content'>
+                            <p><img
+                                    src=https://img.alicdn.com/imgextra/i2/1992806406/O1CN01Q37z3Q1xBztxAC3Qy_!!1992806406.jpg>
+                            </p>
+                        </div>
+                    </li>
+                    <li class='work'>
+                        <input class='radio' id='work17' name='works' type='radio'>
+                        <div class=relative>
+                            <label for='work17'>魔域威魄wrs二阶</label>
+                            <span class='date'>9月</span>
+                            <span class='circle'></span>
+                        </div>
+                        <div class='content'>
+                            <p><img
+                                    src=https://img.alicdn.com/imgextra/i1/1992806406/O1CN01BMdeO71xBztsLVEmA_!!1992806406.jpg>
+                            </p>
+                        </div>
+                    </li>
+                    <li class='work'>
+                        <input class='radio' id='work18' name='works' type='radio'>
+                        <div class=relative>
+                            <label for='work18'>MScubeMS3L</label>
+                            <span class='date'>9月</span>
+                            <span class='circle'></span>
+                        </div>
+                        <div class='content'>
+                            <p><img
+                                    src=https://gd4.alicdn.com/imgextra/i4/1992806406/O1CN01lBYgPc1xBzqgTNmMl_!!1992806406.jpg>
+                            </p>
+                        </div>
+                    </li>
+                    <li class='work'>
+                        <input class='radio' id='work19' name='works' type='radio'>
+                        <div class=relative>
+                            <label for='work19'>魔域威龙wr磁悬浮</label>
+                            <span class='date'>9月</span>
+                            <span class='circle'></span>
+                        </div>
+                        <div class='content'>
+                            <p><img
+                                    src=https://img.alicdn.com/imgextra/i1/1992806406/O1CN01TnbNDx1xBzuEaSoLz_!!1992806406.jpg>
+                            </p>
+                        </div>
+                    </li>
+                    <li class='work'>
+                        <input class='radio' id='work20' name='works' type='radio'>
+                        <div class=relative>
+                            <label for='work20'>GAN12M系列</label>
+                            <span class='date'>9月</span>
+                            <span class='circle'></span>
+                        </div>
+                        <div class='content'>
+                            <p><img
+                                    src=https://gd1.alicdn.com/imgextra/i1/1992806406/O1CN01HB6xgp1xBzuE0VKaB_!!1992806406.jpg>
+                            </p>
+                        </div>
+                    </li>
+                    <li class='work'>
+                        <input class='radio' id='work21' name='works' type='radio'>
+                        <div class=relative>
+                            <label for='work21'>点盛太阳系S3M</label>
+                            <span class='date'>10月</span>
+                            <span class='circle'></span>
+                        </div>
+                        <div class='content'>
+                            <p><img
+                                    src=https://img.alicdn.com/imgextra/i3/1992806406/O1CN015pFuaP1xBzuUshoXp_!!1992806406.jpg>
+                            </p>
+                        </div>
+                    </li>
+                    <li class='work'>
+                        <input class='radio' id='work22' name='works' type='radio'>
+                        <div class=relative>
+                            <label for='work22'>奇艺MP系列</label>
+                            <span class='date'>10月</span>
+                            <span class='circle'></span>
+                        </div>
+                        <div class='content'>
+                            <p><img
+                                    src=https://img.alicdn.com/imgextra/i4/1992806406/O1CN01EvR9fq1xBzuWJDKC5_!!1992806406.jpg>
+                            </p>
+                        </div>
+                    </li>
+                    <li class='work'>
+                        <input class='radio' id='work23' name='works' type='radio'>
+                        <div class=relative>
+                            <label for='work23'>PEAKCUBES3R</label>
+                            <span class='date'>11月</span>
+                            <span class='circle'></span>
+                        </div>
+                        <div class='content'>
+                            <p><img
+                                    src=https://img.alicdn.com/imgextra/i1/1992806406/O1CN013eYOkE1xBzutX7p4u_!!1992806406.jpg>
+                            </p>
+                        </div>
+                    </li>
+                    <li class='work'>
+                        <input class='radio' id='work24' name='works' type='radio'>
+                        <div class=relative>
+                            <label for='work24'>魔域磁悬浮金字塔</label>
+                            <span class='date'>11月</span>
+                            <span class='circle'></span>
+                        </div>
+                        <div class='content'>
+                            <p><img
+                                    src=https://img.alicdn.com/imgextra/i3/1992806406/O1CN01Nxunga1xBzv2lHyxF_!!1992806406.jpg>
+                            </p>
+                        </div>
+                    </li>
+                    <li class='work'>
+                        <input class='radio' id='work25' name='works' type='radio'>
+                        <div class=relative>
+                            <label for='work25'>永骏MGCEVO</label>
+                            <span class='date'>12月</span>
+                            <span class='circle'></span>
+                        </div>
+                        <div class='content'>
+                            <p><img
+                                    src=https://img.alicdn.com/imgextra/i1/1992806406/O1CN01gWUzGi1xBzvCXxsFV_!!1992806406.png>
+                            </p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>
